@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Music Keyboard simulator</title>
+    <link type="text/css" rel="stylesheet" href="keyboard.css">
+  </head>
+  <body>
+    <h1>Welcome to KeyboardJS Simulator</h1>
+    <div class="keyboard">
+      <div id="do" class="keytone white" style="left:0%"></div>
+      <div id="re" class="keytone white" style="left: 14%"></div>
+      <div id="mi" class="keytone white" style="left: 28%"></div>
+      <div id="fa" class="keytone white" style="left: 42%"></div>
+      <div id="sol" class="keytone white" style="left: 56%"></div>
+      <div id="la" class="keytone white" style="left: 70%"></div>
+      <div id="si" class="keytone white" style="left: 84%"></div>
+
+      <div id="do#" class="keysemitone black" style="left: 10.5%"></div>
+      <div id="re#" class="keysemitone black" style="left: 24.5%"></div>
+      <div id="fa#" class="keysemitone black" style="left: 52.5%"></div>
+      <div id="sol#" class="keysemitone black" style="left: 66.5%"></div>
+      <div id="la#" class="keysemitone black" style="left: 80.5%"></div>
+
+      <button id="btnFreeMode" class="btn-start" style="left: 10%" onclick="">Free mode</button>
+      <button id="btnPracticeSong" class="btn-start" style="left: 60%" onclick="">Practice a song</button>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script>
+      const C = document.getElementById('do')
+      const D = document.getElementById('re')
+      const E = document.getElementById('mi')
+      const F = document.getElementById('fa')
+      const G = document.getElementById('sol')
+      const A = document.getElementById('la')
+      const B = document.getElementById('si')
+      const btnFreeMode = document.getElementById('btnFreeMode')
+      const btnPracticeSong = document.getElementById('btnPracticeSong')
+    </script>
+
+
+  </body>
+</html>
