@@ -3,85 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Music Keyboard simulator</title>
-    <style>
-      body {
-        margin: 0;
-        background: #dedede;
-        display: flex;
-        align-items: center;
-        height: 100vh;
-      }
-      .keyboard {
-        height: 100vw;
-        width: 100vw;
-        overflow: hidden;
-        margin: 0 auto;
-        max-height: 60vh;
-        max-width: 80vw;
-      }
-      .keytone {
-        width: 12%;
-        height: 90%;
-        border-style: solid;
-      }
-      .keysemitone {
-        width: 6%;
-        height: 32%;
-        border-style: solid;
-        position: absolute;
-      }
-      .left {
-        float: left;
-      }
-      .right {
-        float: right;
-      }
-      .white {
-        background: #f8f8ff;
-      }
-      .white.light {
-        background: #d2d2f0;
-      }
-      .black {
-        background: #000000;
-      }
-      .black.light{
-        background: #4a4a72;
-      }
-      .btn-start {
-        width: 400px;
-        height: 100px;
-        background: #ecf0f1;
-        color: #2c3e50;
-        font-size: 2.5rem;
-        position: absolute;
-        top: calc(50% - 50px);
-        left: calc(50% - 200px);
-      }
-      .hide {
-        display: none;
-      }
-      * {
-        font-family: 'Arial';
-      }
-    </style>
+    <link type="text/css" rel="stylesheet" href="keyboard.css">
   </head>
   <body>
+    <h1>Welcome to KeyboardJS Simulator</h1>
     <div class="keyboard">
-      <div id="do" class="keytone white left"></div>
-      <div id="do#" class="keysemitone black" style="left: 17%"></div>
-      <div id="re" class="keytone white left"></div>
-      <div id="re#" class="keysemitone black" style="left: 27%"></div>
-      <div id="mi" class="keytone white left"></div>
-      <div id="re#" class="keysemitone black" style="left: 37%"></div>
-      <div id="fa" class="keytone white left"></div>
-      <div id="fa#" class="keysemitone black" style="left: 47%"></div>
-      <div id="sol" class="keytone white left"></div>
-      <div id="sol#" class="keysemitone black" style="left: 57%"></div>
-      <div id="la" class="keytone white left"></div>
-      <div id="la#" class="keysemitone black" style="left: 67%"></div>
-      <div id="si" class="keytone white left"></div>
-      <!-- <button id="btnEmpezar" class="btn-start" onclick="">Free mode</button> -->
+      <div id="do" class="keytone white" style="left:0%"></div>
+      <div id="re" class="keytone white" style="left: 14%"></div>
+      <div id="mi" class="keytone white" style="left: 28%"></div>
+      <div id="fa" class="keytone white" style="left: 42%"></div>
+      <div id="sol" class="keytone white" style="left: 56%"></div>
+      <div id="la" class="keytone white" style="left: 70%"></div>
+      <div id="si" class="keytone white" style="left: 84%"></div>
+
+      <div id="do#" class="keysemitone black" style="left: 10.5%"></div>
+      <div id="re#" class="keysemitone black" style="left: 24.5%"></div>
+      <div id="fa#" class="keysemitone black" style="left: 52.5%"></div>
+      <div id="sol#" class="keysemitone black" style="left: 66.5%"></div>
+      <div id="la#" class="keysemitone black" style="left: 80.5%"></div>
+
+      <button id="btnFreeMode" class="btn-start" style="left: 10%" onclick="">Free mode</button>
+      <button id="btnPracticeSong" class="btn-start" style="left: 60%" onclick="">Practice a song</button>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script>
@@ -92,7 +35,8 @@
       const G = document.getElementById('sol')
       const A = document.getElementById('la')
       const B = document.getElementById('si')
-      const btnEmpezar = document.getElementById('btnEmpezar')
+      const btnFreeMode = document.getElementById('btnFreeMode')
+      const btnPracticeSong = document.getElementById('btnPracticeSong')
     </script>
 
 

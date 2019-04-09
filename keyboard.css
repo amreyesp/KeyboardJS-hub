@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  background: #dedede;
+  display: flex;
+  /* align-items: center; */
+  height: 100vh;
+}
+h1 {
+  display: inline;
+  text-align: center;
+}
+.keyboard {
+  align-self: center;
+  height: 60vw;
+  width: 80vw;
+  overflow: hidden;
+  margin: 0 auto;
+  max-height: 60vh;
+  max-width: 80vw;
+  position: fixed;
+  left: 10%;
+}
+.keytone {
+  width: 14%;
+  height: 90%;
+  border-style: solid;
+  position: absolute;
+}
+.keysemitone {
+  width: 7%;
+  height: 55%;
+  border-style: solid;
+  position: absolute;
+}
+.white {
+  background: #f8f8ff;
+}
+.white.light {
+  background: #d2d2f0;
+}
+.black {
+  background: #000000;
+}
+.black.light{
+  background: #4a4a72;
+}
+.btn-start {
+  width: 30%;
+  height: 15%;
+  background: #ecf0f1;
+  color: #2c3e50;
+  font-size: 5vh;
+  position: fixed;
+  bottom: 5%;
+  /* top: calc(50% - 50px);
+  left: calc(50% - 200px); */
+}
+.hide {
+  display: none;
+}
+* {
+  font-family: 'Arial';
+}
