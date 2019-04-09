@@ -1,16 +1,16 @@
 body {
   margin: 0;
   background: #dedede;
-  display: flex;
+  display: grid;
   /* align-items: center; */
   height: 100vh;
 }
 h1 {
-  display: inline;
   text-align: center;
+  font-size: 8vh;
 }
 .keyboard {
-  align-self: center;
+  align-self:center;
   height: 60vw;
   width: 80vw;
   overflow: hidden;
@@ -19,6 +19,7 @@ h1 {
   max-width: 80vw;
   position: fixed;
   left: 10%;
+  top: 20%;
 }
 .keytone {
   width: 14%;
