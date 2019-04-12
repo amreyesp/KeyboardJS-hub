@@ -33,37 +33,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     <script>
-      const C = document.getElementById('do')
-      const Csharp = document.getElementById('do#')
-      const D = document.getElementById('re')
-      const Dsharp = document.getElementById('re#')
-      const E = document.getElementById('mi')
-      const F = document.getElementById('fa')
-      const Fsharp = document.getElementById('fa#')
-      const G = document.getElementById('sol')
-      const Gsharp = document.getElementById('sol#')
-      const A = document.getElementById('la')
-      const Asharp = document.getElementById('la#')
-      const B = document.getElementById('si')
-      const btnFreeMode = document.getElementById('btnFreeMode')
-      const btnPracticeSong = document.getElementById('btnPracticeSong')
+      const C = document.getElementById('do');
+      const Csharp = document.getElementById('do#');
+      const D = document.getElementById('re');
+      const Dsharp = document.getElementById('re#');
+      const E = document.getElementById('mi');
+      const F = document.getElementById('fa');
+      const Fsharp = document.getElementById('fa#');
+      const G = document.getElementById('sol');
+      const Gsharp = document.getElementById('sol#');
+      const A = document.getElementById('la');
+      const Asharp = document.getElementById('la#');
+      const B = document.getElementById('si');
+      const btnFreeMode = document.getElementById('btnFreeMode');
+      const btnPracticeSong = document.getElementById('btnPracticeSong');
+      const btnStartPractice = document.getElementById('btnStartPractice');
+      const btnHome = document.getElementById('btnHome');
 
-      const Csound = new Audio('media/Cmajor.mp3')
-      const CsharpSound = new Audio('media/Csharp.mp3')
-      const Dsound = new Audio('media/Dmajor.mp3')
-      const DsharpSound = new Audio('media/Dsharp.mp3')
-      const Esound = new Audio('media/Emajor.mp3')
-      const Fsound = new Audio('media/Fmajor.mp3')
-      const FsharpSound = new Audio('media/Fsharp.mp3')
-      const Gsound = new Audio('media/Gmajor.mp3')
-      const GsharpSound = new Audio('media/Gsharp.mp3')
-      const Asound = new Audio('media/Amajor.mp3')
-      const AsharpSound = new Audio('media/Asharp.mp3')
-      const Bsound = new Audio('media/Bmajor.mp3')
+      const Csound = new Audio('media/Cmajor.mp3');
+      const CsharpSound = new Audio('media/Csharp.mp3');
+      const Dsound = new Audio('media/Dmajor.mp3');
+      const DsharpSound = new Audio('media/Dsharp.mp3');
+      const Esound = new Audio('media/Emajor.mp3');
+      const Fsound = new Audio('media/Fmajor.mp3');
+      const FsharpSound = new Audio('media/Fsharp.mp3');
+      const Gsound = new Audio('media/Gmajor.mp3');
+      const GsharpSound = new Audio('media/Gsharp.mp3');
+      const Asound = new Audio('media/Amajor.mp3');
+      const AsharpSound = new Audio('media/Asharp.mp3');
+      const Bsound = new Audio('media/Bmajor.mp3');
     </script>
 
     <script src="freenotes.js"></script>
     <script src="practice.js"></script>
+
+    <script type="text/javascript">
+      function GoHome() {
+        btnStartPractice.classList.add('hide');
+        btnHome.classList.add('hide');
+        btnFreeMode.classList.remove('hide');
+        btnPracticeSong.classList.remove('hide');
+      }
+    </script>
 
   </body>
 </html>
