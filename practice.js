@@ -1,16 +1,16 @@
 class Practice {
 
   constructor(random) {
-    this.selectedSong = random
-    this.setPractice()
-    this.ChooseSong()
+    this.selectedSong = random;
+    this.setPractice();
+    this.ChooseSong();
   }
 
   setPractice () {
-    btnFreeMode.classList.add('hide')
-    btnPracticeSong.classList.add('hide')
-    btnStartPractice.classList.remove('hide')
-    btnHome.classList.remove('hide')
+    btnFreeMode.classList.add('hide');
+    btnPracticeSong.classList.add('hide');
+    btnStartPractice.classList.remove('hide');
+    btnHome.classList.remove('hide');
   }
 
   ChooseSong() {
@@ -28,31 +28,55 @@ class Practice {
         song3: {
           text: "Song 3", value: "song3",
         },
-        song4: {
-          text: "Song 4", value: "song4",
-        },
         other: {
           text: "No, I want a random song", value: "random",
         }
       },
     })
     .then(value => {
-      this.selectedSong = value
-      swal("Let's begin!",`You selected the ${value} option`, "success")
-      console.log(this)
+      this.selectedSong = value;
+      swal("Let's begin!",`You selected the ${value} option`, "success");
+      console.log(this);
     })
     )
     .then (()=> {
-      this.LoadSong(this.selectedSong)
+      this.LoadSong(this.selectedSong);
     })
   }
 
   LoadSong(song) {
-    console.log(song)
+    var tabs = new Array;
+    if (song === 'random') {
+      const randNumber = Math.floor(Math.random()*3);
+      switch (randNumber) {
+        case 0:
+          song = 'song1';
+          break;
+        case 1:
+          song = 'song2';
+          break;
+        case 2:
+          song = 'song3';
+          break;
+      }
+
+    }
+    switch (song) {
+      case 'song1':
+        tabs = [Esound, Gsound, Csound, Dsound, Esound];
+        break;
+      case 'song2':
+        tabs = [Esound, Esound, Fsound, Gsound, Gsound, Fsound, Esound, Dsound, Csound];
+        break;
+      case 'song3':
+        tabs = [Csound, Csound, Fsound, Fsound, Gsound, Gsound, Fsound, Fsound, Fsound, Esound, Esound, Dsound, Dsound, Csound];
+        break;
+    }
+    console.log(tabs)
   }
 
 }
 
 function PracticeSong() {
-  var practice = new Practice('random')
+  var practice = new Practice('random');
 }
