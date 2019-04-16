@@ -1,64 +1,62 @@
-
 function PlayKeyboard() {
-  C.addEventListener('click',function() {
-    console.log(`This is ${C.id} note`);
-    Csound.play();
-    tappedKey = Csound;
-  })
-  Csharp.addEventListener('click',function() {
-    console.log(`This is ${Csharp.id} note`);
-    CsharpSound.play();
-    tappedKey = CsharpSound;
-  })
-  D.addEventListener('click',function() {
-    console.log(`This is ${D.id} note`);
-    Dsound.play();
-    tappedKey = Dsound;
-  })
-  Dsharp.addEventListener('click',function() {
-    console.log(`This is ${Dsharp.id} note`);
-    DsharpSound.play();
-    tappedKey = DsharpSound;
-  })
-  E.addEventListener('click',function() {
-    console.log(`This is ${E.id} note`);
-    Esound.play();
-    tappedKey = Esound;
-  })
-  F.addEventListener('click',function() {
-    console.log(`This is ${F.id} note`);
-    Fsound.play();
-    tappedKey = Fsound;
-  })
-  Fsharp.addEventListener('click',function() {
-    console.log(`This is ${Fsharp.id} note`);
-    FsharpSound.play();
-    tappedKey = FsharpSound;
-  })
-  G.addEventListener('click',function() {
-    console.log(`This is ${G.id} note`);
-    Gsound.play();
-    tappedKey = Gsound;
-  })
-  Gsharp.addEventListener('click',function() {
-    console.log(`This is ${Gsharp.id} note`);
-    GsharpSound.play();
-    tappedKey = GsharpSound;
-  })
-  A.addEventListener('click',function() {
-    console.log(`This is ${A.id} note`);
-    Asound.play();
-    tappedKey = Asound;
-  })
-  Asharp.addEventListener('click',function() {
-    console.log(`This is ${Asharp.id} note`);
-    AsharpSound.play();
-    tappedKey = AsharpSound;
-  })
-  B.addEventListener('click',function() {
-    console.log(`This is ${B.id} note`);
-    Bsound.play();
-    tappedKey = Bsound;
-  })
-  return tappedKey;
+    IdentifyTappedKey();
+}
+
+function IdentifyTappedKey() {
+  C.addEventListener('click',() => {tappedKey = C; GetSoundKey(tappedKey).play()} );
+  Csharp.addEventListener('click',() => {tappedKey = Csharp; GetSoundKey(tappedKey).play()} );
+  D.addEventListener('click',() => {tappedKey = D; GetSoundKey(tappedKey).play()} );
+  Dsharp.addEventListener('click',() => {tappedKey = Dsharp; GetSoundKey(tappedKey).play()} );
+  E.addEventListener('click',() => {tappedKey = E; GetSoundKey(tappedKey).play()} );
+  F.addEventListener('click',() => {tappedKey = F; GetSoundKey(tappedKey).play()} );
+  Fsharp.addEventListener('click',() => {tappedKey = Fsharp; GetSoundKey(tappedKey).play()} );
+  G.addEventListener('click',() => {tappedKey = G; GetSoundKey(tappedKey).play()} );
+  Gsharp.addEventListener('click',() => {tappedKey = Gsharp; GetSoundKey(tappedKey).play()} );
+  A.addEventListener('click',() => {tappedKey = A; GetSoundKey(tappedKey).play()} );
+  Asharp.addEventListener('click',() => {tappedKey = Asharp; GetSoundKey(tappedKey).play()} );
+  B.addEventListener('click',() => {tappedKey = B; GetSoundKey(tappedKey).play()} );
+  //return tappedKey;
+}
+
+function GetSoundKey(tappedKey) {
+  var soundKey;
+  switch (tappedKey) {
+    case C:
+      soundKey = Csound;
+      break;
+    case Csharp:
+      soundKey = CsharpSound;
+      break;
+    case D:
+      soundKey = Dsound;
+      break;
+    case Dsharp:
+      soundKey = DsharpSound;
+      break;
+    case E:
+      soundKey = Esound;
+      break;
+    case F:
+      soundKey = Fsound;
+      break;
+    case Fsharp:
+      soundKey = FsharpSound;
+      break;
+    case G:
+      soundKey = Gsound;
+      break;
+    case Gsharp:
+      soundKey = GsharpSound;
+      break;
+    case A:
+      soundKey = Asound;
+      break;
+    case Asharp:
+      soundKey = AsharpSound;
+      break;
+    case B:
+      soundKey = Bsound;
+      break;
+  }
+  return soundKey;
 }
