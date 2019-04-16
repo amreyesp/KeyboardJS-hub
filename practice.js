@@ -45,7 +45,6 @@ class Practice {
   }
 
   LoadSong(song) {
-    var tabs = new Array;
     if (song === 'random') {
       const randNumber = Math.floor(Math.random()*3);
       switch (randNumber) {
@@ -59,7 +58,6 @@ class Practice {
           song = 'song3';
           break;
       }
-
     }
     switch (song) {
       case 'song1':
@@ -72,11 +70,53 @@ class Practice {
         tabs = [Csound, Csound, Fsound, Fsound, Gsound, Gsound, Fsound, Fsound, Fsound, Esound, Esound, Dsound, Dsound, Csound];
         break;
     }
-    console.log(tabs)
+    console.log(tabs);
   }
-
 }
 
-function PracticeSong() {
-  var practice = new Practice('random');
+function PracticeSession() {
+  practice = new Practice('random');
+}
+
+
+//This function is implemented once the button "Start Practice" is tapped
+function StartPractice() {
+  //Define number of levels for each song: number of key tabs
+  const maxLevel = tabs.length;
+  var level = 4;
+  var practiceStatus = 'on practice';
+  //Practice on each level of the song (e.g. level 0 = key0; level 1 = key0 + key1 ...)
+  while (practiceStatus === 'on practice') {
+    practiceStatus = PracticeOnLevel(level, maxLevel);
+    EvalPractice(practiceStatus);
+    level++;
+  }
+}
+
+//Implement practice on specific level
+function PracticeOnLevel(level, maxLevel) {
+  if (level < maxLevel) {
+      PlayArray(level);
+      //Let the user try to follow the sequence
+      //Compare keys tapped vs elements of array
+      //Update practiceResult variable
+      //Increment practice level
+      practiceStatus = 'on practice';
+  } else {
+    practiceStatus = 'succeded';
+  }
+  return practiceStatus;
+}
+
+function PlayArray(level) {
+  for (let j = 0; j <= level; j++) {
+    setTimeout(() => {tabs[j].play(); console.log(tabs[j])}, 1000 * j);
+  }
+}
+
+function EvalPractice(practiceStatus) {
+  console.log(practiceStatus);
+  if (practiceStatus === 'succeded'){
+    swal("Congratulations!",`You learn the ${practice.selectedSong}`, "success");
+  }
 }
