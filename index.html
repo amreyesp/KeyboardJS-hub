@@ -24,7 +24,7 @@
       <div id="la#" class="keysemitone black" style="left: 80.5%"></div>
 
       <button id="btnFreeMode" class="btn-start" style="left: 10%" onclick="PlayKeyboard()">Free mode</button>
-      <button id="btnPracticeSong" class="btn-start" style="left: 60%" onclick="PracticeSong()">Practice a song</button>
+      <button id="btnPracticeSong" class="btn-start" style="left: 60%" onclick="PracticeSession()">Practice a song</button>
 
       <button id="btnStartPractice" class="btn-start hide" style="left: 10%" onclick="StartPractice()">Start Practice</button>
       <button id="btnHome" class="btn-start hide" style="left: 60%" onclick="GoHome()">Home</button>
@@ -50,18 +50,21 @@
       const btnStartPractice = document.getElementById('btnStartPractice');
       const btnHome = document.getElementById('btnHome');
 
-      const Csound = new Audio('media/Cmajor.mp3');
-      const CsharpSound = new Audio('media/Csharp.mp3');
-      const Dsound = new Audio('media/Dmajor.mp3');
-      const DsharpSound = new Audio('media/Dsharp.mp3');
-      const Esound = new Audio('media/Emajor.mp3');
-      const Fsound = new Audio('media/Fmajor.mp3');
-      const FsharpSound = new Audio('media/Fsharp.mp3');
-      const Gsound = new Audio('media/Gmajor.mp3');
-      const GsharpSound = new Audio('media/Gsharp.mp3');
-      const Asound = new Audio('media/Amajor.mp3');
-      const AsharpSound = new Audio('media/Asharp.mp3');
-      const Bsound = new Audio('media/Bmajor.mp3');
+      const Csound = new Audio('media/Cmajor.mov');
+      const CsharpSound = new Audio('media/Csharp.mov');
+      const Dsound = new Audio('media/Dmajor.mov');
+      const DsharpSound = new Audio('media/Dsharp.mov');
+      const Esound = new Audio('media/Emajor.mov');
+      const Fsound = new Audio('media/Fmajor.mov');
+      const FsharpSound = new Audio('media/Fsharp.mov');
+      const Gsound = new Audio('media/Gmajor.mov');
+      const GsharpSound = new Audio('media/Gsharp.mov');
+      const Asound = new Audio('media/Amajor.mov');
+      const AsharpSound = new Audio('media/Asharp.mov');
+      const Bsound = new Audio('media/Bmajor.mov');
+
+      var practice, tappedKey;
+      var tabs = new Array;
     </script>
 
     <script src="freenotes.js"></script>
