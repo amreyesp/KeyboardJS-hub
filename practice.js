@@ -61,13 +61,13 @@ class Practice {
     }
     switch (song) {
       case 'song1':
-        tabs = [Esound, Gsound, Csound, Dsound, Esound];
+        tabs = [E, G, C, D, E];
         break;
       case 'song2':
-        tabs = [Esound, Esound, Fsound, Gsound, Gsound, Fsound, Esound, Dsound, Csound];
+        tabs = [E, E, F, G, G, F, E, D, C];
         break;
       case 'song3':
-        tabs = [Csound, Csound, Fsound, Fsound, Gsound, Gsound, Fsound, Fsound, Fsound, Esound, Esound, Dsound, Dsound, Csound];
+        tabs = [C, C, F, F, G, G, F, F, F, E, E, D, D, C];
         break;
     }
     console.log(tabs);
@@ -77,7 +77,6 @@ class Practice {
 function PracticeSession() {
   practice = new Practice('random');
 }
-
 
 //This function is implemented once the button "Start Practice" is tapped
 function StartPractice() {
@@ -110,7 +109,7 @@ function PracticeOnLevel(level, maxLevel) {
 
 function PlayArray(level) {
   for (let j = 0; j <= level; j++) {
-    setTimeout(() => {tabs[j].play(); console.log(tabs[j])}, 1000 * j);
+    setTimeout(() => { GetSoundKey(tabs[j]).play(); console.log(tabs[j]) }, 1000 * j);
   }
 }
 
