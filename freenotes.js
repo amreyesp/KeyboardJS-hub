@@ -15,7 +15,7 @@ function IdentifyTappedKey() {
   A.addEventListener('click',() => {tappedKey = A; GetSoundKey(tappedKey).play()} );
   Asharp.addEventListener('click',() => {tappedKey = Asharp; GetSoundKey(tappedKey).play()} );
   B.addEventListener('click',() => {tappedKey = B; GetSoundKey(tappedKey).play()} );
-  //return tappedKey;
+  return tappedKey;
 }
 
 function GetSoundKey(tappedKey) {
