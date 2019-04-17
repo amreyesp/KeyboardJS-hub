@@ -92,13 +92,26 @@ function StartPractice() {
   }
 }
 
+// function LightOnKey(keyToLight) {
+//   keyToLight.classList.add('light');
+//   }
+//
+// function LightOutKey(keyToLightOut) {
+//   keyToLightOut.classList.remove('light');
+// }
+
+function toggleLightKey(key) {
+  key.classList.add('light');
+  setTimeout(() => {key.classList.add('light'); key.classList.remove('light')}, 300);
+}
+
 //Implement practice on specific level
 function PracticeOnLevel(level, maxLevel) {
+  var tabsTapped;
   if (level < maxLevel) {
       PlayArray(level);
-      //Let the user try to follow the sequence
       //Compare keys tapped vs elements of array
-      //Update practiceResult variable
+      //Update practiceStatus variable
       //Increment practice level
       practiceStatus = 'on practice';
   } else {
@@ -109,13 +122,13 @@ function PracticeOnLevel(level, maxLevel) {
 
 function PlayArray(level) {
   for (let j = 0; j <= level; j++) {
-    setTimeout(() => { GetSoundKey(tabs[j]).play(); console.log(tabs[j]) }, 1000 * j);
+    setTimeout(() => { GetSoundKey(tabs[j]).play(); toggleLightKey(tabs[j]) }, 1000 * j);
   }
 }
 
 function EvalPractice(practiceStatus) {
   console.log(practiceStatus);
   if (practiceStatus === 'succeded'){
-    swal("Congratulations!",`You learn the ${practice.selectedSong}`, "success");
+    //swal("Congratulations!",`You learn the ${practice.selectedSong}`, "success");
   }
 }
