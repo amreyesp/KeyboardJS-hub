@@ -8,7 +8,7 @@
   <body>
     <h1>Welcome to KeyboardJS Simulator</h1>
 
-    <div class="keyboard">
+    <div id="keyboard" class="keyboard">
       <div id="C" class="keytone white" style="left:0%"></div>
       <div id="D" class="keytone white" style="left: 14%"></div>
       <div id="E" class="keytone white" style="left: 28%"></div>
@@ -25,48 +25,13 @@
 
       <button id="btnFreeMode" class="btn-start" style="left: 10%" onclick="PlayKeyboard()">Free mode</button>
       <button id="btnPracticeSong" class="btn-start" style="left: 60%" onclick="PracticeSession()">Practice a song</button>
-
       <button id="btnStartPractice" class="btn-start hide" style="left: 10%" onclick="StartPractice()">Start Practice</button>
       <button id="btnHome" class="btn-start hide" style="left: 60%" onclick="GoHome()">Home</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
-    <script>
-      const C = document.getElementById('C');
-      const Csharp = document.getElementById('Csharp');
-      const D = document.getElementById('D');
-      const Dsharp = document.getElementById('Dsharp');
-      const E = document.getElementById('E');
-      const F = document.getElementById('F');
-      const Fsharp = document.getElementById('Fsharp');
-      const G = document.getElementById('G');
-      const Gsharp = document.getElementById('Gsharp');
-      const A = document.getElementById('A');
-      const Asharp = document.getElementById('Asharp');
-      const B = document.getElementById('B');
-      const btnFreeMode = document.getElementById('btnFreeMode');
-      const btnPracticeSong = document.getElementById('btnPracticeSong');
-      const btnStartPractice = document.getElementById('btnStartPractice');
-      const btnHome = document.getElementById('btnHome');
-
-      const Csound = new Audio('media/Cmajor.mov');
-      const CsharpSound = new Audio('media/Csharp.mov');
-      const Dsound = new Audio('media/Dmajor.mov');
-      const DsharpSound = new Audio('media/Dsharp.mov');
-      const Esound = new Audio('media/Emajor.mov');
-      const Fsound = new Audio('media/Fmajor.mov');
-      const FsharpSound = new Audio('media/Fsharp.mov');
-      const Gsound = new Audio('media/Gmajor.mov');
-      const GsharpSound = new Audio('media/Gsharp.mov');
-      const Asound = new Audio('media/Amajor.mov');
-      const AsharpSound = new Audio('media/Asharp.mov');
-      const Bsound = new Audio('media/Bmajor.mov');
-
-      var practice, tappedKey;
-      var tabs = new Array;
-    </script>
-
+    <script src="model.js"></script>
     <script src="freenotes.js"></script>
     <script src="practice.js"></script>
 

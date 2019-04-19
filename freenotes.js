@@ -1,21 +1,19 @@
-function PlayKeyboard() {
-    IdentifyTappedKey();
-}
 
-function IdentifyTappedKey() {
-  C.addEventListener('click',() => {tappedKey = C; GetSoundKey(tappedKey).play()} );
-  Csharp.addEventListener('click',() => {tappedKey = Csharp; GetSoundKey(tappedKey).play()} );
-  D.addEventListener('click',() => {tappedKey = D; GetSoundKey(tappedKey).play()} );
-  Dsharp.addEventListener('click',() => {tappedKey = Dsharp; GetSoundKey(tappedKey).play()} );
-  E.addEventListener('click',() => {tappedKey = E; GetSoundKey(tappedKey).play()} );
-  F.addEventListener('click',() => {tappedKey = F; GetSoundKey(tappedKey).play()} );
-  Fsharp.addEventListener('click',() => {tappedKey = Fsharp; GetSoundKey(tappedKey).play()} );
-  G.addEventListener('click',() => {tappedKey = G; GetSoundKey(tappedKey).play()} );
-  Gsharp.addEventListener('click',() => {tappedKey = Gsharp; GetSoundKey(tappedKey).play()} );
-  A.addEventListener('click',() => {tappedKey = A; GetSoundKey(tappedKey).play()} );
-  Asharp.addEventListener('click',() => {tappedKey = Asharp; GetSoundKey(tappedKey).play()} );
-  B.addEventListener('click',() => {tappedKey = B; GetSoundKey(tappedKey).play()} );
-  return tappedKey;
+function PlayKeyboard() {
+  C.addEventListener('click',() => {tappedKey = C; GetSoundKey(tappedKey).play(); tapCounter++} );
+  Csharp.addEventListener('click',() => {tappedKey = Csharp; GetSoundKey(tappedKey).play(); tapCounter++} );
+  D.addEventListener('click',() => {tappedKey = D; GetSoundKey(tappedKey).play(); tapCounter++} );
+  Dsharp.addEventListener('click',() => {tappedKey = Dsharp; GetSoundKey(tappedKey).play(); tapCounter++} );
+  E.addEventListener('click',() => {tappedKey = E; GetSoundKey(tappedKey).play(); tapCounter++} );
+  F.addEventListener('click',() => {tappedKey = F; GetSoundKey(tappedKey).play(); tapCounter++} );
+  Fsharp.addEventListener('click',() => {tappedKey = Fsharp; GetSoundKey(tappedKey).play(); tapCounter++} );
+  G.addEventListener('click',() => {tappedKey = G; GetSoundKey(tappedKey).play(); tapCounter++} );
+  Gsharp.addEventListener('click',() => {tappedKey = Gsharp; GetSoundKey(tappedKey).play(); tapCounter++} );
+  A.addEventListener('click',() => {tappedKey = A; GetSoundKey(tappedKey).play(); tapCounter++} );
+  Asharp.addEventListener('click',() => {tappedKey = Asharp; GetSoundKey(tappedKey).play(); tapCounter++} );
+  B.addEventListener('click',() => {tappedKey = B; GetSoundKey(tappedKey).play(); tapCounter++} );
+  //return tappedKey, tapCounter;
+  //console.log(tapCounter)
 }
 
 function GetSoundKey(tappedKey) {
