@@ -2,6 +2,7 @@ class Practice {
 
   constructor(random) {
     this.selectedSong = random;
+    this.level = 0;
     this.setPractice();
     this.ChooseSong();
   }
@@ -69,13 +70,12 @@ function PracticeSession() {
 }
 
 //This function is implemented once the button "Start Practice" is tapped
-function StartPractice() {
+function StartPractice(level) {
   //Define number of levels for each song: number of key tabs
   const maxLevel = tabs.length;
-  var level = 3;
   var practiceStatus = 'on practice';
   //Practice on each level of the song (e.g. level 0 = key0; level 1 = key0 + key1 ...)
-  practiceStatus = PracticeOnLevel(level, maxLevel);
+  practiceStatus = PracticeOnLevel(maxLevel);
   //EvalPractice(practiceStatus);
   // while (practiceStatus === 'on practice') {
   //   practiceStatus = PracticeOnLevel(level, maxLevel);
@@ -90,11 +90,12 @@ function toggleLightKey(key) {
 }
 
 //Implement practice on specific level
-function PracticeOnLevel(level, maxLevel) {
-  if (level < maxLevel) {
+function PracticeOnLevel(maxLevel) {
+  if (practice.level < maxLevel) {
     practiceStatus = 'on practice';
-    PlayArray(level)
-    CaptureKeyEvent(level);
+    console.log(`start practice on level ${practice.level}`)
+    PlayArray(practice.level)
+    CaptureKeyEvent();
   } else {
     practiceStatus = 'succeded';
   }
@@ -109,34 +110,54 @@ function PlayArray(level) {
 }
 
 function onError() {
-  console.log(`An error ocurred`);
+  console.log(`Wrong key!`);
+  EvalPractice('fail');
 }
 
-function CaptureKeyEvent(level) {
+function CaptureKeyEvent() {
   C.addEventListener('click', CheckTabMatch);
   D.addEventListener('click', CheckTabMatch);
   E.addEventListener('click', CheckTabMatch);
   F.addEventListener('click', CheckTabMatch);
   G.addEventListener('click', CheckTabMatch);
   A.addEventListener('click', CheckTabMatch);
+}
 
-  function CheckTabMatch() {
-    tappedKey = event.target;
-    GetSoundKey(tappedKey).play();
-    if (tapCounter <= level) {
-      if (tappedKey === tabs[tapCounter]) {
-        console.log(`${tappedKey.id} event captured`)
-        tapCounter++;
-      } else {
-        onError();
-        EvalPractice('Practice over');
-      }
+function CheckTabMatch() {
+  tappedKey = event.target;
+  GetSoundKey(tappedKey).play();
+  if (tapCounter <= practice.level) {
+    if (tappedKey === tabs[tapCounter]) {
+      console.log(`${tappedKey.id} event captured`)
+      tapCounter++;
+      NextLevel();
+    } else {
+      onError();
     }
   }
 }
 
+function NextLevel() {
+  if (tapCounter > practice.level) {
+    console.log(`Transition to level ${practice.level+1}`)
+    //Restart tappedKey
+    tapCounter = 0;
+    //Remove event listeners
+    C.removeEventListener('click', CheckTabMatch);
+    D.removeEventListener('click', CheckTabMatch);
+    E.removeEventListener('click', CheckTabMatch);
+    F.removeEventListener('click', CheckTabMatch);
+    G.removeEventListener('click', CheckTabMatch);
+    A.removeEventListener('click', CheckTabMatch);
+    //Increment level
+    practice.level++
+    //Start practice on new level
+    setTimeout(() => { StartPractice() }, 2000);
+  }
+}
+
 function EvalPractice(practiceStatus) {
-  console.log(`Eval practice ${practiceStatus}`);
+  console.log(`Eval practice: ${practiceStatus}`);
   if (practiceStatus === 'succeded'){
     //swal("Congratulations!",`You learn the ${practice.selectedSong}`, "success");
   }
