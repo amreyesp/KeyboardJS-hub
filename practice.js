@@ -132,7 +132,7 @@ function CheckTabMatch() {
       tapCounter++;
       NextLevel();
     } else {
-      onError();
+      EvalPractice('fail');
     }
   }
 }
@@ -152,13 +152,20 @@ function NextLevel() {
     //Increment level
     practice.level++
     //Start practice on new level
-    setTimeout(() => { StartPractice() }, 2000);
+    setTimeout(StartPractice, 2000);
+  }
+  if (practice.level === tabs.length) {
+    EvalPractice('succeded');
   }
 }
 
 function EvalPractice(practiceStatus) {
   console.log(`Eval practice: ${practiceStatus}`);
-  if (practiceStatus === 'succeded'){
-    //swal("Congratulations!",`You learn the ${practice.selectedSong}`, "success");
+  switch (practiceStatus) {
+    case 'succeded':
+      swal("Congratulations!",`You learn the ${practice.selectedSong}`, "success");
+      break;
+    case 'fail':
+      swal("Sorry :(",`You tapped the wrong key`, "error");
   }
 }
