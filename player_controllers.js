@@ -36,14 +36,13 @@ function GetSoundKey(tappedKey) {
       break;
     case B:
       soundKey = Bsound;
-      break;
   }
   return soundKey;
 }
 
 function PlayArray(level){
   for (let j = 0; j <= level; j++) {
-    setTimeout(() => { GetSoundKey(tabs[j]).play(); toggleLightKey(tabs[j]) }, 1000 * j);
+    setTimeout(() => { GetSoundKey(practice.tabs[j]).play(); toggleLightKey(practice.tabs[j]) }, 1000 * j);
   }
   setTimeout(() => {console.log('Song ended')} , 1000 * level)
 }
