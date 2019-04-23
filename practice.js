@@ -44,23 +44,19 @@ function ChooseSong(){
 
 //This function is implemented once the button "Start Practice" is tapped
 function StartPractice(){
-  //Define number of levels for each song: number of key tabs
-  const maxLevel = practice.tabs.length;
-  //Practice on each level of the song (e.g. level 0 = key0; level 1 = key0 + key1 ...)
-  PracticeOnLevel(maxLevel);
+  const maxLevel = practice.tabs.length; //Define number of levels for each song: number of key tabs
+  PracticeOnLevel(maxLevel); //Practice on each level of the song (e.g. level 0 = key0; level 1 = key0 + key1 ...)
 }
 
 //Implement practice on specific level
 function PracticeOnLevel(maxLevel){
   if (practice.level < maxLevel) {
-    //practiceStatus = 'on practice';
     console.log(`start practice on level ${practice.level}`)
     PlayArray(practice.level)
     CaptureKeyEvent();
   } else {
     practiceStatus = 'succeded';
   }
-  //return practiceStatus;
 }
 
 

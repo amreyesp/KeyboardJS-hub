@@ -36,7 +36,6 @@ function GetSoundKey(tappedKey) {
       break;
     case B:
       soundKey = Bsound;
-      break;
   }
   return soundKey;
 }
