@@ -38,5 +38,4 @@ const songList = {
 }
 
 //Define global variables
-var practice, tappedKey, keyboardMode, tapCounter = 0;
-var tabs = new Array;
+var tappedKey, keyboardMode;

@@ -3,6 +3,9 @@ class Practice{
   constructor(){
     this.level = 0;
     this.setPractice();
+    this.tabs = new Array;
+    this.tapCounter = 0;
+    this.status = 'on practice'
   }
 
   setPractice(){
@@ -33,17 +36,16 @@ function ChooseSong(){
     },
   })
   .then(value => {
-    tabs = value;
+    practice.tabs = value;
     swal("Let's begin!","Follow the key sequence", "success");
-    console.log(tabs);
+    console.log(practice.tabs);
   })
 }
 
 //This function is implemented once the button "Start Practice" is tapped
-function StartPractice(level){
+function StartPractice(){
   //Define number of levels for each song: number of key tabs
-  const maxLevel = tabs.length;
-  var practiceStatus = 'on practice';
+  const maxLevel = practice.tabs.length;
   //Practice on each level of the song (e.g. level 0 = key0; level 1 = key0 + key1 ...)
   PracticeOnLevel(maxLevel);
 }
@@ -51,38 +53,40 @@ function StartPractice(level){
 //Implement practice on specific level
 function PracticeOnLevel(maxLevel){
   if (practice.level < maxLevel) {
-    practiceStatus = 'on practice';
+    //practiceStatus = 'on practice';
     console.log(`start practice on level ${practice.level}`)
     PlayArray(practice.level)
     CaptureKeyEvent();
   } else {
     practiceStatus = 'succeded';
   }
-  return practiceStatus;
+  //return practiceStatus;
 }
 
 
 function CheckTabMatch(){
-  if (tapCounter <= practice.level) {
-    if (tappedKey === tabs[tapCounter]) {
+  if (practice.tapCounter <= practice.level) {
+    if (tappedKey === practice.tabs[practice.tapCounter]) {
       console.log(`${tappedKey.id} event captured`)
-      tapCounter++;
+      practice.tapCounter++;
       NextLevel();
     } else {
-      EvalPractice('fail');
+      practice.status = 'fail'
+      EvalPractice(practice.status);
     }
   }
 }
 
 function NextLevel(){
-  if (tapCounter > practice.level) {
+  if (practice.tapCounter > practice.level) {
     console.log(`Transition to level ${practice.level+1}`)
-    tapCounter = 0; //Restart tapCounter
+    practice.tapCounter = 0; //Restart tapCounter
     practice.level++; //Increment level
     setTimeout(StartPractice, 1500); //Start practice on new level
   }
-  if (practice.level === tabs.length) {
-    EvalPractice('succeded');
+  if (practice.level === practice.tabs.length) {
+    practice.status = 'succeded';
+    EvalPractice(practice.status);
   }
 }
 
