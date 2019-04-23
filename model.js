@@ -1,3 +1,4 @@
+//Define elements for events handler
 const C = document.getElementById('C');
 const Csharp = document.getElementById('Csharp');
 const D = document.getElementById('D');
@@ -15,6 +16,7 @@ const btnPracticeSong = document.getElementById('btnPracticeSong');
 const btnStartPractice = document.getElementById('btnStartPractice');
 const btnHome = document.getElementById('btnHome');
 
+//Define media files to be used
 const Csound = new Audio('media/Cmajor.mov');
 const CsharpSound = new Audio('media/Csharp.mov');
 const Dsound = new Audio('media/Dmajor.mov');
@@ -28,5 +30,13 @@ const Asound = new Audio('media/Amajor.mov');
 const AsharpSound = new Audio('media/Asharp.mov');
 const Bsound = new Audio('media/Bmajor.mov');
 
-var practice, tappedKey, tapCounter = 0;
+//Define song list for practice mode
+const songList = {
+  'song1': [E, G, C, D, E],
+  'song2': [E, E, F, G, G, F, E, D, C],
+  'song3': [C, C, F, F, G, G, F, F, F, E, E, D, D, C]
+}
+
+//Define global variables
+var practice, tappedKey, keyboardMode, tapCounter = 0;
 var tabs = new Array;

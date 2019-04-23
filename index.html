@@ -25,13 +25,15 @@
 
       <button id="btnFreeMode" class="btn-start" style="left: 10%" onclick="PlayKeyboard()">Free mode</button>
       <button id="btnPracticeSong" class="btn-start" style="left: 60%" onclick="PracticeSession()">Practice a song</button>
-      <button id="btnStartPractice" class="btn-start hide" style="left: 10%" onclick="StartPractice(practice.level)">Start Practice</button>
+      <button id="btnStartPractice" class="btn-start hide" style="left: 10%" onclick="StartPractice(0)">Start Practice</button>
       <button id="btnHome" class="btn-start hide" style="left: 60%" onclick="GoHome()">Home</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     <script src="model.js"></script>
+    <script src="player_utils.js"></script>
+    <script src="event_utils.js"></script>
     <script src="freenotes.js"></script>
     <script src="practice.js"></script>
 
@@ -41,6 +43,7 @@
         btnHome.classList.add('hide');
         btnFreeMode.classList.remove('hide');
         btnPracticeSong.classList.remove('hide');
+        //RemoveCaptureKey();
       }
     </script>
 
