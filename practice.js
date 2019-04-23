@@ -1,6 +1,6 @@
 class Practice{
 
-  constructor(random){
+  constructor(){
     this.level = 0;
     this.setPractice();
   }
@@ -14,7 +14,7 @@ class Practice{
 }
 
 function PracticeSession(){
-  practice = new Practice('random');
+  practice = new Practice();
   keyboardMode = 'practice';
   RemoveCaptureKey();
   ChooseSong();
