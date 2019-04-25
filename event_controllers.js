@@ -30,6 +30,7 @@ function RemoveCaptureKey(){
 
 function CallBackKey(){
   tappedKey = event.target;
+  GetSoundKey(tappedKey).load();
   GetSoundKey(tappedKey).play();
   if (keyboardMode === 'practice'){
     CheckTabMatch();
