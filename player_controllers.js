@@ -42,6 +42,13 @@ function GetSoundKey(tappedKey) {
 
 function PlayArray(level){
   for (let j = 0; j <= level; j++) {
-    setTimeout(() => { GetSoundKey(practice.tabs[j]).play(); toggleLightKey(practice.tabs[j]) }, 1000 * j);
+    setTimeout(() =>
+      {
+        GetSoundKey(practice.tabs[j]).load();
+        GetSoundKey(practice.tabs[j]).play();
+        toggleLightKey(practice.tabs[j])
+      },
+      1000 * j
+    );
   }
 }
