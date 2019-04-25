@@ -44,5 +44,4 @@ function PlayArray(level){
   for (let j = 0; j <= level; j++) {
     setTimeout(() => { GetSoundKey(practice.tabs[j]).play(); toggleLightKey(practice.tabs[j]) }, 1000 * j);
   }
-  setTimeout(() => {console.log('Song ended')} , 1000 * level)
 }

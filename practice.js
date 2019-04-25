@@ -51,9 +51,11 @@ function StartPractice(){
 //Implement practice on specific level
 function PracticeOnLevel(maxLevel){
   if (practice.level < maxLevel) {
-    console.log(`start practice on level ${practice.level}`)
-    PlayArray(practice.level)
-    CaptureKeyEvent();
+    console.log(`start practice on level ${practice.level}`);
+    RemoveCaptureKey();
+    PlayArray(practice.level);
+    //activate capture event once the tabs play is finished
+    setTimeout(() => {CaptureKeyEvent()} , (1000 * practice.level) + 500);
   } else {
     practiceStatus = 'succeded';
   }
