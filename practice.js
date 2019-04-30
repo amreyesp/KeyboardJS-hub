@@ -38,7 +38,7 @@ function ChooseSong(){
   .then(value => {
     practice.tabs = value;
     swal("Let's begin!","Follow the key sequence", "success");
-    console.log(practice.tabs);
+    //console.log(practice.tabs);
   })
 }
 
@@ -51,7 +51,7 @@ function StartPractice(){
 //Implement practice on specific level
 function PracticeOnLevel(maxLevel){
   if (practice.level < maxLevel) {
-    console.log(`start practice on level ${practice.level}`);
+    //console.log(`start practice on level ${practice.level}`);
     RemoveCaptureKey();
     PlayArray(practice.level);
     //activate capture event once the tabs play is finished
@@ -65,7 +65,7 @@ function PracticeOnLevel(maxLevel){
 function CheckTabMatch(){
   if (practice.tapCounter <= practice.level) {
     if (tappedKey === practice.tabs[practice.tapCounter]) {
-      console.log(`${tappedKey.id} event captured`)
+      //console.log(`${tappedKey.id} event captured`)
       practice.tapCounter++;
       NextLevel();
     } else {
@@ -77,7 +77,7 @@ function CheckTabMatch(){
 
 function NextLevel(){
   if (practice.tapCounter > practice.level) {
-    console.log(`Transition to level ${practice.level+1}`)
+    //console.log(`Transition to level ${practice.level+1}`)
     practice.tapCounter = 0; //Restart tapCounter
     practice.level++; //Increment level
     setTimeout(StartPractice, 1500); //Start practice on new level
@@ -89,7 +89,7 @@ function NextLevel(){
 }
 
 function EvalPractice(practiceStatus){
-  console.log(`Eval practice: ${practiceStatus}`);
+  //console.log(`Eval practice: ${practiceStatus}`);
   switch (practiceStatus) {
     case 'succeded':
       swal("Congratulations!",`You learn the song`, "success");
